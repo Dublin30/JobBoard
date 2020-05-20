@@ -1,4 +1,4 @@
-﻿using JobBoard.MVC.UI;
+﻿using IdentitySample.Models;
 using System.Data.Entity;
 using System.Web.Mvc;
 using System.Web.Optimization;
