@@ -1,0 +1,82 @@
+﻿@model IEnumerable<JobBoard.Data.EF.Application>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @if (Request.IsAuthenticated && User.IsInRole("Admin, Scheduler"))
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MangerNotes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResumeFileName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationStatu.StatusName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OpenPosition.OpenPositionID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserDetail.FirstName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MangerNotes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ResumeFileName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationStatu.StatusName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OpenPosition.OpenPositionID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserDetail.FirstName)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.ApplicationID })
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin, Manager, Corporate"))
+                    {
+                        @:|
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ApplicationID })
+                        @:|
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ApplicationID })
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable();
+        });
+    </script>
+}

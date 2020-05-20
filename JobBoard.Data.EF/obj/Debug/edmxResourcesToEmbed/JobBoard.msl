@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JobBoardModelStoreContainer" CdmEntityContainer="JobBoardEntities">
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="JobBoardModel.Application">
+        <MappingFragment StoreEntitySet="Applications">
+          <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="OpenPositionsID" ColumnName="OpenPositionsID" />
+          <ScalarProperty Name="ApplicationDate" ColumnName="ApplicationDate" />
+          <ScalarProperty Name="MangerNotes" ColumnName="MangerNotes" />
+          <ScalarProperty Name="ApplicationsStatusID" ColumnName="ApplicationsStatusID" />
+          <ScalarProperty Name="ResumeFileName" ColumnName="ResumeFileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicationStatus">
+      <EntityTypeMapping TypeName="JobBoardModel.ApplicationStatu">
+        <MappingFragment StoreEntitySet="ApplicationStatus">
+          <ScalarProperty Name="ApplicationStatusID" ColumnName="ApplicationStatusID" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="StatusDescription" ColumnName="StatusDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="JobBoardModel.Location">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OpenPositions">
+      <EntityTypeMapping TypeName="JobBoardModel.OpenPosition">
+        <MappingFragment StoreEntitySet="OpenPositions">
+          <ScalarProperty Name="OpenPositionID" ColumnName="OpenPositionID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Positions">
+      <EntityTypeMapping TypeName="JobBoardModel.Position">
+        <MappingFragment StoreEntitySet="Positions">
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails">
+      <EntityTypeMapping TypeName="JobBoardModel.UserDetail">
+        <MappingFragment StoreEntitySet="UserDetails">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="ResumeFileName" ColumnName="ResumeFileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
